@@ -1,12 +1,16 @@
 #include <QPainter>
 #include "dropmonitor.h"
+#include "qlineedit.h"
 #include<QGraphicsRectItem>
 
-DropMonitor::DropMonitor(QWidget *parent): QLabel(parent)
+DropMonitor::DropMonitor(QWidget *parent): QLineEdit(parent)
 {
     setMinimumSize(100,30);
     setAcceptDrops(true);
-    SetRect();
+    //QLineEdit *line = new QLineEdit;
+    //setBuddy(line);
+    show();
+
 }
 
 void DropMonitor::dragEnterEvent(QDragEnterEvent *event)

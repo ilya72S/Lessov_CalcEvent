@@ -13,10 +13,12 @@ main_Scene::main_Scene()
     _init_Keyboard();
     // _init_Monitor();
 
-    //Line_Monitor.move(200,100);
+   // Line_Monitor->move(200,100);
 
     //addWidget(&Line_Monitor);
-    mDropMonitor = new DropMonitor;
+
+    mDropMonitor = new DropMonitor();
+
     addWidget(mDropMonitor);
 
 }
@@ -32,6 +34,11 @@ void main_Scene::_init_Keyboard()
 
 
 }
+
+/*void main_Scene::_init_Monitor()
+{
+
+}*/
 
 bool main_Scene::_is_moving_keyboard_(const QPointF aPos)
 {

@@ -3,8 +3,9 @@
 #include "qtmetamacros.h"
 #include <QtGui>
 #include <QLabel>
+#include <QLineEdit>
 
-class DropMonitor: public QLabel
+class DropMonitor: public QLineEdit
 {
     Q_OBJECT
 public:
