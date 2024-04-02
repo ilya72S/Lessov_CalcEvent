@@ -42,6 +42,7 @@ void main_Scene::_init_Keyboard()
 
 bool main_Scene::_is_moving_keyboard_(const QPointF aPos)
 {
+
     return (aPos.x()>= mKeyboard.xtl())
              && (aPos.x()<= mKeyboard.xbr())
              && (aPos.y()>=mKeyboard.ytl())
@@ -52,22 +53,22 @@ void main_Scene::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
      {
-      const QPointF Drag_pos = event->scenePos();
+      mDrag_pos = event->scenePos();
      }
 
 }
 
 void main_Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    const QPointF Drag_pos = event->scenePos();
+
 
     bool keybordHover =  _is_moving_keyboard_(event->scenePos());
-
+    qDebug()<<"keybordHover= "<<keybordHover;
      if(keybordHover)
      {
       if( event->buttons() & Qt::LeftButton)
        {
-        int distance = (event->scenePos()- Drag_pos).manhattanLength();
+        int distance = (event->scenePos()- mDrag_pos).manhattanLength();
         if(distance > QApplication::startDragDistance())
          {
           QMimeData* pMimeData = new QMimeData;

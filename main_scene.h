@@ -19,6 +19,7 @@ private:
     //Monitor mMonitror;
     Keyboard mKeyboard;
     DropMonitor *mDropMonitor;
+    QPointF mDrag_pos;
 
 
     void _init_Keyboard();
