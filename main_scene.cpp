@@ -6,6 +6,7 @@
 #include<QRectF>
 #include<QDrag>
 #include<QMimeData>
+#include <QVector>
 
 
 main_Scene::main_Scene()

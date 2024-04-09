@@ -10,6 +10,7 @@ class DropMonitor: public QLineEdit
     Q_OBJECT
 public:
     explicit DropMonitor(QWidget *parent = nullptr);
+    QString ss;
 
     // QWidget interface
 protected:

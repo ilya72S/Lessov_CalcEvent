@@ -22,6 +22,8 @@ void DropMonitor::dragEnterEvent(QDragEnterEvent *event)
 void DropMonitor::dropEvent(QDropEvent *event)
 {
     const QMimeData *mimeData = event->mimeData();
-    setText(mimeData->text());
+
+    ss.append(mimeData->text());
+    setText(ss);
 
 }
