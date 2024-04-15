@@ -20,7 +20,23 @@ main_Scene::main_Scene()
 
     mDropMonitor = new DropMonitor();
 
+    itogButton = new QPushButton("=");
+    itogButton->move(200,500);
+    addWidget(itogButton);
+
     addWidget(mDropMonitor);
+
+    connect(itogButton,&QAbstractButton::clicked, this, &main_Scene::itogSlot);
+
+}
+
+void main_Scene::itogSlot()
+{
+    QString str = mDropMonitor->ss;
+    for(auto s:str)
+    {
+        if(s != '+')
+    }
 
 }
 

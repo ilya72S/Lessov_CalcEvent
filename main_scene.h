@@ -5,6 +5,7 @@
 #include"monitor.h"
 #include"keyboard.h"
 #include"dropmonitor.h"
+#include<QPushButton>
 
 
 class main_Scene:public QGraphicsScene
@@ -14,12 +15,19 @@ public:
 
     //QLineEdit *Line_Monitor;
 
+ public slots:
+
+    void itogSlot();
+
+
+
 private:
 
     //Monitor mMonitror;
     Keyboard mKeyboard;
     DropMonitor *mDropMonitor;
     QPointF mDrag_pos;
+    QPushButton *itogButton;
 
 
     void _init_Keyboard();
