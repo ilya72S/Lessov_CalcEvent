@@ -32,12 +32,69 @@ main_Scene::main_Scene()
 
 void main_Scene::itogSlot()
 {
+    QString a,a1,d;
+
     QString str = mDropMonitor->ss;
-    for(auto s:str)
+    qDebug()<<"str= "<<str;
+    for(int i = 0; i < str.size(); i++)
     {
-        if(s != '+')
+        qDebug()<<"str[i]= "<<str[i];
+        if(str[i] != '+'||'-'||'/'||'*')
+
+        a.append(str[i]);
+
+        else
+        {
+            d.append(str[i]);
+            a1 = a;
+             a.clear();
+        }
     }
 
+    qDebug()<<"a= "<< a;
+    qDebug()<<"a1= "<< a1;
+    qDebug()<<"d= "<< d;
+
+
+    if(d == '+')
+    {
+        float f = a.toFloat();
+        float f1 = a1.toFloat();
+        QVariant res = f+f1;
+        (mDropMonitor->ss) = res.toString();
+
+    }
+
+    if(d == '-')
+    {
+        float f = a.toFloat();
+        float f1 = a1.toFloat();
+        QVariant res = f-f1;
+        (mDropMonitor->ss) = res.toString();
+
+    }
+
+    if(d == '/')
+    {
+        float f = a.toFloat();
+        float f1 = a1.toFloat();
+        if (f1==0)
+        {
+            qDebug()<<"На оль делить нельзя";
+            return;
+        }
+        QVariant res = f/f1;
+        (mDropMonitor->ss) = res.toString();
+
+    }
+    if(d == '*')
+    {
+        float f = a.toFloat();
+        float f1 = a1.toFloat();
+        QVariant res = f*f1;
+        (mDropMonitor->ss) = res.toString();
+
+    }
 }
 
 
@@ -47,7 +104,7 @@ void main_Scene::_init_Keyboard()
     mKeyboard.setPos(200,200);
     mKeyboard.BoundingRectOnSceneCalc();
     addItem(&mKeyboard);
-    qDebug()<<"keyboard";
+    //qDebug()<<"keyboard";
 
 
 }
@@ -80,7 +137,7 @@ void main_Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 
     bool keybordHover =  _is_moving_keyboard_(event->scenePos());
-    qDebug()<<"keybordHover= "<<keybordHover;
+    //qDebug()<<"keybordHover= "<<keybordHover;
      if(keybordHover)
      {
       if( event->buttons() & Qt::LeftButton)
