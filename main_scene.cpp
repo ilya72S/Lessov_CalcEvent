@@ -36,19 +36,24 @@ void main_Scene::itogSlot()
 
     QString str = mDropMonitor->ss;
     qDebug()<<"str= "<<str;
-    for(int i = 0; i < str.size(); i++)
+     QChar *n = str.data();
+     qDebug()<<" n= "<< *n;
+     while(!n->isNull())
     {
-        qDebug()<<"str[i]= "<<str[i];
-        if(str[i] != '+'||'-'||'/'||'*')
 
-        a.append(str[i]);
+
+         if((*n) != QChar('+')||(*n) != QChar ('-')|| (*n) !=QChar('/')|| (*n) !=QChar('*'))
+
+        a.append(*n);
 
         else
         {
-            d.append(str[i]);
+            d.append(*n);
             a1 = a;
              a.clear();
         }
+
+        ++n;
     }
 
     qDebug()<<"a= "<< a;
