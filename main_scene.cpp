@@ -7,6 +7,7 @@
 #include<QDrag>
 #include<QMimeData>
 #include <QVector>
+#include<QChar>
 
 
 main_Scene::main_Scene()
@@ -40,11 +41,17 @@ void main_Scene::itogSlot()
      qDebug()<<" n= "<< *n;
      while(!n->isNull())
     {
+         bool b =(*n) != QChar('+')&&(*n) != QChar ('-')&& (*n) !=QChar('/')&& (*n) !=QChar('*');
+
+         qDebug()<<"bool b ="<< b;
 
 
-         if((*n) != QChar('+')||(*n) != QChar ('-')|| (*n) !=QChar('/')|| (*n) !=QChar('*'))
+         if((*n) != QChar('+')&&(*n) != QChar ('-')&& (*n) !=QChar('/')&& (*n) !=QChar('*'))
+         {
 
-        a.append(*n);
+
+             a.append(*n);
+         }
 
         else
         {
@@ -67,6 +74,7 @@ void main_Scene::itogSlot()
         float f1 = a1.toFloat();
         QVariant res = f+f1;
         (mDropMonitor->ss) = res.toString();
+        mDropMonitor->set_Itog();
 
     }
 
@@ -76,6 +84,8 @@ void main_Scene::itogSlot()
         float f1 = a1.toFloat();
         QVariant res = f-f1;
         (mDropMonitor->ss) = res.toString();
+        mDropMonitor->set_Itog();
+
 
     }
 
@@ -90,6 +100,8 @@ void main_Scene::itogSlot()
         }
         QVariant res = f/f1;
         (mDropMonitor->ss) = res.toString();
+        mDropMonitor->set_Itog();
+
 
     }
     if(d == '*')
@@ -98,6 +110,8 @@ void main_Scene::itogSlot()
         float f1 = a1.toFloat();
         QVariant res = f*f1;
         (mDropMonitor->ss) = res.toString();
+        mDropMonitor->set_Itog();
+
 
     }
 }

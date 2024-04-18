@@ -13,6 +13,14 @@ DropMonitor::DropMonitor(QWidget *parent): QLineEdit(parent)
 
 }
 
+void DropMonitor::set_Itog()
+{
+    clear();
+    setText(ss);
+    QLineEdit::update();
+
+}
+
 void DropMonitor::dragEnterEvent(QDragEnterEvent *event)
 {
     event->acceptProposedAction();

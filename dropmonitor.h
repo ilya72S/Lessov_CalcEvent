@@ -11,6 +11,7 @@ class DropMonitor: public QLineEdit
 public:
     explicit DropMonitor(QWidget *parent = nullptr);
     QString ss;
+    void set_Itog();
 
     // QWidget interface
 protected:
