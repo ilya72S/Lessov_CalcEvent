@@ -18,6 +18,7 @@ public:
  public slots:
 
     void itogSlot();
+    void clearMonitor();
 
 
 
@@ -28,6 +29,7 @@ private:
     DropMonitor *mDropMonitor;
     QPointF mDrag_pos;
     QPushButton *itogButton;
+    QPushButton *Cl_Button;
 
 
     void _init_Keyboard();

@@ -25,9 +25,15 @@ main_Scene::main_Scene()
     itogButton->move(200,500);
     addWidget(itogButton);
 
+    Cl_Button = new QPushButton("Clear");
+    Cl_Button->move(500,500);
+    addWidget(Cl_Button);
+
     addWidget(mDropMonitor);
 
     connect(itogButton,&QAbstractButton::clicked, this, &main_Scene::itogSlot);
+
+    connect(Cl_Button,&QPushButton::clicked, this,&main_Scene::clearMonitor);
 
 }
 
@@ -114,6 +120,12 @@ void main_Scene::itogSlot()
 
 
     }
+}
+
+void main_Scene::clearMonitor()
+{
+    mDropMonitor->Cl_monitor();
+
 }
 
 

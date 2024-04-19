@@ -21,6 +21,14 @@ void DropMonitor::set_Itog()
 
 }
 
+void DropMonitor::Cl_monitor()
+{
+    clear();
+    ss.clear();
+    QLineEdit::update();
+
+}
+
 void DropMonitor::dragEnterEvent(QDragEnterEvent *event)
 {
     event->acceptProposedAction();

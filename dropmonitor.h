@@ -12,6 +12,7 @@ public:
     explicit DropMonitor(QWidget *parent = nullptr);
     QString ss;
     void set_Itog();
+    void Cl_monitor();
 
     // QWidget interface
 protected:
