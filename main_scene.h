@@ -43,6 +43,10 @@ private:
 protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     virtual void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
+
+    // QGraphicsScene interface
+protected:
+    void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // MAIN_SCENE_H

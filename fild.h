@@ -56,6 +56,10 @@ protected:
 
    virtual void _init_Cels_()=0;
 
+
+   // QGraphicsItem interface
+   protected:
+   virtual void keyPressEvent(QKeyEvent *event) override;
 };
 
 #endif // FILD_H

@@ -7,6 +7,7 @@ DropMonitor::DropMonitor(QWidget *parent): QLineEdit(parent)
 {
     setMinimumSize(100,30);
     setAcceptDrops(true);
+    QGraphicsItem::ItemIsFocusable;
     //QLineEdit *line = new QLineEdit;
     //setBuddy(line);
     show();

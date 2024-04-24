@@ -12,6 +12,7 @@
 
 main_Scene::main_Scene()
 {
+    QGraphicsItem::ItemIsFocusable;
     _init_Keyboard();
     // _init_Monitor();
 
@@ -187,6 +188,18 @@ void main_Scene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
        }
      }
     QGraphicsScene::mouseMoveEvent(event);
+
+}
+
+void main_Scene::keyPressEvent(QKeyEvent *event)
+{
+    qDebug()<<event->key();
+    if (event->key()== Qt::Key_0 && Qt::Key_9 && Qt::Key_Plus && Qt::Key_Minus
+        && Qt::Key_division && Qt::Key_multiply)
+    {
+        QVariant kk =event->key();
+        mDropMonitor->ss = kk.toString();
+    }
 
 }
 

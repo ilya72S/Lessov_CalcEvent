@@ -15,6 +15,8 @@ fild::fild(int aLines,int aColumns,int aCellSize):
 {
     setAcceptHoverEvents(true);
     setAcceptedMouseButtons(Qt::MouseButton::LeftButton);
+    QGraphicsItem::ItemIsFocusable;
+
 
 }
 
@@ -152,6 +154,18 @@ void fild::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
     mMousePos = event->pos();
     mHover = true;
     QGraphicsItem::update();
+
+}
+
+void fild::keyPressEvent(QKeyEvent *event)// что бы при нажатии клавиш подсвечивались квадатики а сцене
+{
+    if (event->key()== Qt::Key_0 || Qt::Key_9 && Qt::Key_Plus && Qt::Key_Minus
+                                         && Qt::Key_division && Qt::Key_multiply)
+    {
+        mHover = true;
+        QGraphicsItem::update();
+    }
+
 
 }
 
