@@ -13,11 +13,16 @@ public:
     QString ss;
     void set_Itog();
     void Cl_monitor();
+    void set_Key();
 
     // QWidget interface
 protected:
-    void dragEnterEvent(QDragEnterEvent *event);
-    void dropEvent(QDropEvent *event);
+    void dragEnterEvent(QDragEnterEvent *event)override;
+    void dropEvent(QDropEvent *event)override;
+
+    // QWidget interface
+protected:
+   // virtual void keyPressEvent(QKeyEvent *event) override;
 };
 
 #endif // DROPMONITOR_H

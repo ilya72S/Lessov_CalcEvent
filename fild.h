@@ -59,7 +59,7 @@ protected:
 
    // QGraphicsItem interface
    protected:
-   virtual void keyPressEvent(QKeyEvent *event) override;
+   //virtual void keyPressEvent(QKeyEvent *event) override;
 };
 
 #endif // FILD_H

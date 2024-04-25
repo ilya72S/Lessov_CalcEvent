@@ -7,7 +7,7 @@ DropMonitor::DropMonitor(QWidget *parent): QLineEdit(parent)
 {
     setMinimumSize(100,30);
     setAcceptDrops(true);
-    QGraphicsItem::ItemIsFocusable;
+
     //QLineEdit *line = new QLineEdit;
     //setBuddy(line);
     show();
@@ -30,6 +30,13 @@ void DropMonitor::Cl_monitor()
 
 }
 
+void DropMonitor::set_Key()
+{
+    setText(ss);
+    QLineEdit::update();
+
+}
+
 void DropMonitor::dragEnterEvent(QDragEnterEvent *event)
 {
     event->acceptProposedAction();
@@ -44,3 +51,13 @@ void DropMonitor::dropEvent(QDropEvent *event)
     setText(ss);
 
 }
+
+/*void DropMonitor::keyPressEvent(QKeyEvent *event)
+{
+
+    setText(ss);
+    QLineEdit::update();
+
+
+
+}*/
