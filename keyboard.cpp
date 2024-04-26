@@ -4,6 +4,7 @@ Keyboard::Keyboard():fild(4,5,30)
 {
     _init_Cels_();
 
+
 }
 
 void Keyboard::_init_Cels_()
@@ -26,5 +27,12 @@ void Keyboard::_init_Cels_()
     Vec_Fields[12]= "-";
     Vec_Fields[13]= "*";
     Vec_Fields[14]= "/";
+
+}
+
+bool Keyboard::highlight_Key()
+{
+    return mHover = true;
+    QGraphicsItem::update();
 
 }

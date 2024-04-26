@@ -13,6 +13,8 @@ public:
     // fild interface
 protected:
     virtual void _init_Cels_() override;
+public:
+    bool highlight_Key();
 };
 
 #endif // KEYBOARD_H

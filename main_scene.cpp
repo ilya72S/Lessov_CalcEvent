@@ -198,86 +198,95 @@ void main_Scene::keyPressEvent(QKeyEvent *event)
      if (event->key()== Qt::Key_0 )
         {
 
-            mDropMonitor->ss = '0';
+        (mDropMonitor->ss).append('0');
          mDropMonitor->set_Key();
+        mKeyboard.highlight_Key();
+
         }
 
      if (event->key()== Qt::Key_1 )
      {
 
-         mDropMonitor->ss ='1';
+            (mDropMonitor->ss).append('1');
          mDropMonitor->set_Key();
+
      }
      if (event->key()== Qt::Key_2 )
      {
 
-         mDropMonitor->ss = '2';
+         (mDropMonitor->ss).append('2');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_3 )
      {
 
-         mDropMonitor->ss = '3';
+         (mDropMonitor->ss).append('3');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_4 )
      {
 
-         mDropMonitor->ss = '4';
+         (mDropMonitor->ss).append('4');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_5 )
      {
 
-         mDropMonitor->ss = '5';
+         (mDropMonitor->ss).append('5');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_6 )
      {
 
-         mDropMonitor->ss = '6';
+         (mDropMonitor->ss).append('6');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_7 )
      {
 
-         mDropMonitor->ss = '7';
+         (mDropMonitor->ss).append('7');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_8 )
      {
 
-         mDropMonitor->ss = '8';
+         (mDropMonitor->ss).append('8');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_9)
      {
 
-         mDropMonitor->ss = '9';
+         (mDropMonitor->ss).append('9');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_Minus )
      {
 
-         mDropMonitor->ss = '-';
+         (mDropMonitor->ss).append('-');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_Plus )
      {
 
-         mDropMonitor->ss = '+';
+         (mDropMonitor->ss).append( '+');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_division )
      {
 
-         mDropMonitor->ss = '/';
+         (mDropMonitor->ss).append( '/');
          mDropMonitor->set_Key();
      }
      if (event->key()== Qt::Key_multiply )
      {
 
-         mDropMonitor->ss ='*';
+         (mDropMonitor->ss).append('*');
+         mDropMonitor->set_Key();
+     }
+     if (event->key()== Qt::Key_Comma )
+     {
+
+         (mDropMonitor->ss).append('.');
          mDropMonitor->set_Key();
      }
 
